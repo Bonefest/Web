@@ -1,0 +1,20 @@
+@font-face {
+	font-family:"Press Start 2P";
+	src:url("PressStart2P.eot?")
+	format("woff"),url("PressStart2P.ttf")
+	format("truetype"),url("PressStart2P.svg#PressStart2P")
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+.aligner {
+	display: flex;
+	width: 70%;
+	margin-left:15%;
+	font-family: Press Start 2P;
+}
+
+.header_block {
+	display: flex;
+}
