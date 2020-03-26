@@ -199,7 +199,7 @@ body {
 .details_block {
 	display: flex;
 	flex-direction: column;
-	margin-left: 20%;
+	/*margin-left: 20%;*/
 }
 
 .details_block p {
@@ -221,12 +221,12 @@ body {
 }
 
 .fl_part_two {
-	display: flex;
-	flex-direction: column;
+	
 
 	width: 286px;
 	height: 215px;
 	border: 10px solid #A09898;
+	margin-left: 25%;
 }
 
 .second_level_info {
