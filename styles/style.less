@@ -9,12 +9,17 @@ html, body {
 }
 
 .container-fluid, px-0 {
-	background: url("../Resources/HeaderBackground.svg") no-repeat;
-	background-size: cover;
-	background-position: 50% 100%;
 	width: 100%;
-
+	.row {
+		.global_bg {
+			width: 100%;
+			background: url("../Resources/HeaderBackground.svg") no-repeat;
+			background-size: cover;
+			background-position: 50% 100%;
+		}
+	}
 	.header {
+
 		margin-top: 10%;
 		margin-bottom: 10%;	
 
@@ -36,6 +41,43 @@ html, body {
 		}
 	}
 
+	.algorithm {
+		margin-top: 5%;
+		.title {
+			width: 100%;
+			font-size: 40px;
+			text-align: center;
+		}	
+
+		.algorithm_illustration {
+			margin-top: 10%;
+			img {
+				width: 100%;
+			}
+
+			display: block;
+
+
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.algorithm_illustration_mobile {
+			margin-top: 10%;
+			img {
+				width: 100%;
+			}
+
+			display: none;
+
+
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	
+
 }
 
 .button {
@@ -53,6 +95,7 @@ html, body {
 
 @media (max-width: 768px) {
 	.container-fluid, px-0 {
+		word-wrap: break-word;
 		.header {
 			margin: 0;
 			text-align: center;
@@ -68,9 +111,24 @@ html, body {
 			}
 
 			.title {
-				//margin-left: 10%;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
-	}
 
+		.algorithm {
+
+			.algorithm_illustration {
+				display: none;
+			}
+
+			.algorithm_illustration_mobile {
+				display: block;
+
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+	}
 }
