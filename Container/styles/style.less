@@ -20,11 +20,13 @@ a:hover, a:visited, a:link, a:active {
 	}
 
 	.header {
+		width: 100%;
 		margin-top: 5%;
 		margin-bottom: 5%;
 
 		.logo {
 			img {
+				display: block;
 				width: 75%;
 				margin-left: auto;
 				margin-right: auto;
@@ -143,6 +145,47 @@ a:hover, a:visited, a:link, a:active {
 
 			}
 		}
+
+		
+		.mobile_style {
+			display: none;
+		}
+
+	}
+
+
+	.account {
+		width: 100%;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.text_one {
+			p {
+				margin: 0;
+				text-align: center;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 23px;
+				color: #EAEAEA;
+			}
+		}
+
+		.text_two {
+			p {
+				text-align: center;
+				margin-top: 5px;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 12px;
+				line-height: 15px;
+				text-decoration-line: underline;
+
+				color: #000000;
+			}
+		}
 	}
 	
 }
@@ -171,17 +214,37 @@ a:hover, a:visited, a:link, a:active {
 
 			.menu_button {
 				margin-top: 2px;
-				width: 75%;
-				height: 18px;
+				
+				height: 24px;
 				margin-left: auto;
 				margin-right: auto;
 
 				p {
-				
-					line-height: 18px;
+					font-size: 12px;
+					line-height: 24px;
 				}
 			}
+
+
+		
+			.mobile_style {
+				display: block;
+				img {
+					display: block;
+					margin-left: 0;
+					margin-right: auto;
+				}
+			}
+			
 		}
+
+
+		.account {
+			.desktop_style {
+				display: none;
+			}
+		}
+
 
 	}
 }
@@ -192,7 +255,18 @@ a:hover, a:visited, a:link, a:active {
 			display: none;
 		}
 
-		
+		.header {
+			.logo {
+				img {
+					width: 50%;
+				}
+			}
 
+			.menu_button {
+				p {
+
+				}
+			}
+		}
 	}	
 }
