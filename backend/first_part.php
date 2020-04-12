@@ -16,8 +16,9 @@
 				CFG;
 			}
 
+
+			#Variables---------------------------------------------------------
 			line("Variables");
-			#Varibales basics
 			{
 				//Global variables
 				$globalA = 3;		
@@ -43,8 +44,8 @@
 					static_pass();
 			}
 
+			#Operators---------------------------------------------------------
 			line("Operators");
-			#Operators
 			{
 				$varInt = 10;
 				$varFloat = 10.0;
@@ -63,8 +64,8 @@
 				
 			}
 
-			line("Misc");
-			#Misc
+			#Arrays------------------------------------------------------------
+			line("Arrays");
 			{	
 				echo nl2br("Indexed array\n");
 				$integers = array();
@@ -79,12 +80,14 @@
 				$data = array();
 				$data["apple"] = 19;
 				$data["pineapple"] = "text";
+				$data[10] = 33;
 
 				print_r($data);
 			}
 
+
+			#Singleton---------------------------------------------------------
 			line("Singleton");
-			#Singleton
 			{
 				class Singleton {
 
