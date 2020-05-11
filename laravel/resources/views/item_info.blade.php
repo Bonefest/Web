@@ -64,6 +64,15 @@ html, body {
             Price: {{$item->price}}$
         </h4>
 
-        <a href="/laravel_learning/public/">[Return]</a>
+        <h2>
+            Belong to categories:
+        </h2>
+
+        @foreach ($categories as $category)
+            <p>{{$category->name}}</p>
+        @endforeach
+        <p>
+         <a href="/laravel_learning/public/">[Return]</a>
+        </p>
     </div>
 @endsection

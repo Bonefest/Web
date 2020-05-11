@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 use App\Item;
+use App\Category;
 use Illuminate\Http\Request;
 
 class Controller extends BaseController
@@ -15,9 +16,26 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function showItems() {
-    	$items = Item::all();
 
-    	return view('item_list', ['items' => $items]);
+      $items = [];
+      if(request()->has('category')) {
+        $id = request()->category;
+        if($id == 0) {
+          $items = Item::all();
+        }
+        else {
+          $category = Category::find($id);
+          if($category != null) {
+            $items = $category->items;
+          }
+        }
+      } else {
+          $items = Item::all();
+      }
+
+      $categories = Category::all();
+
+    	return view('item_list', ['items' => $items, 'categories' => $categories]);
     }
 
     public function showItem($id) {
@@ -26,7 +44,9 @@ class Controller extends BaseController
     		return view('errors');
     	}
 
-    	return view('item_info', ['item' => $item]);
+      $categories = $item->categories;
+
+    	return view('item_info', ['item' => $item, 'categories' => $categories]);
     }
 
     public function createItem(Request $request) {
@@ -35,7 +55,13 @@ class Controller extends BaseController
 	    	$name = $request->input('item_name');
 	    	$price = $request->input('item_price');
 	    	if(!Item::where('name', '=', $name)->exists()) {
-	    		Item::create(array('name' => $name, 'price' => $price));
+	    		$item = Item::create(array('name' => $name, 'price' => $price));
+          $checkboxes = $request->input('checkbox_categories');
+          foreach($checkboxes as $checkbox) {
+            $item->categories()->attach(Category::find($checkbox));
+          }
+          $item->save();
+
 	    	}
    		} else if($request->post('post_type') == "delete_items") {
    			$checkboxes = $request->input('checkbox');

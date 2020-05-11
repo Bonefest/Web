@@ -12,4 +12,9 @@ class Item extends Model {
     protected $attributes = [
     	'information' => 'There is no available information!'
     ];
+
+    public function categories() {
+    	return $this->belongsToMany('App\Category');
+    }
+
 }
